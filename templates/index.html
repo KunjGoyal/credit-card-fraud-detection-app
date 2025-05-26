@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Fraud Detection</h1>
+        <form action="/predict" method="post">
+            <div class="input-group">
+                <label for="V1">distance_from_home:</label>
+                <input type="text" name="V1" required>
+            </div>
+            <div class="input-group">
+                <label for="V2">distance_from_last_transaction:</label>
+                <input type="text" name="V2" required>
+            </div>
+            <div class="input-group">
+                <label for="V3">ratio_to_median_purchase_price:</label>
+                <input type="text" name="V3" required>
+            </div>
+            <div class="input-group">
+                <label for="V4">repeat_retailer:type(0 or 1)</label>
+                <input type="text" name="V4" required>
+            </div>
+            <div class="input-group">
+                <label for="V5">used_chip:type(0 or 1)</label>
+                <input type="text" name="V5" required>
+            </div>
+            <div class="input-group">
+                <label for="binary">used_pin_number:type(0 or 1)</label>
+                <input type="text" name="binary" pattern="[01]" required>
+            </div>
+            <div class="input-group">
+                <label for="Time">online_order:type(0 or 1)</label>
+                <input type="text" name="Time" pattern="[01]" required>
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
+
